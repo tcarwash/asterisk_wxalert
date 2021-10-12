@@ -1,7 +1,7 @@
 import os
 import requests
 
-def run(zone='WAZ039', device='WXAlert'):
+def run(zone, device):
     data = requests.get('https://api.weather.gov/alerts/active?zone={}'.format(zone)).json()
 
     severity = [ x['properties']['severity'] for x in data['features'] ]
@@ -23,8 +23,8 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-z", "--zone", help="NOAA Weather Zone")
-    parser.add_argument("-d", "--device", help="Custom device state to target")
+    parser.add_argument("-z", "--zone", required=True, help="NOAA Weather Zone")
+    parser.add_argument("-d", "--device", required=True, help="Custom device state to target")
     args = parser.parse_args()
 
     run(zone=args.zone, device=args.device)

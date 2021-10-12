@@ -1,4 +1,5 @@
-ld/*
+build/*
+dist/*
 *egg*
 *.pyc
 *.log
