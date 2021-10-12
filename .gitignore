@@ -1,0 +1,5 @@
+ld/*
+*egg*
+*.pyc
+*.log
+*__pycache__*
