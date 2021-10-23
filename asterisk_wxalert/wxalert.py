@@ -9,7 +9,7 @@ def run(zone, device):
     if 'Extreme' in severity:
         state = 'RINGING'
     elif 'Moderate' in severity:
-        state = 'RINGING'
+        state = 'INUSE'
     elif 'Minor' in severity:
         state = 'INUSE'
     elif 'Unknown' in severity:
